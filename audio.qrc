@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/audio">
+        <file>Audio/test.wav</file>
+        <file>Audio/Alarm.wav</file>
+        <file>Audio/Fresh.wav</file>
+        <file>Audio/Moment.wav</file>
+        <file>Audio/NotificationXylophone.wav</file>
+        <file>Audio/StoneSkimmingDay.wav</file>
+        <file>Audio/WaterDropNotificationDay.wav</file>
+    </qresource>
+</RCC>

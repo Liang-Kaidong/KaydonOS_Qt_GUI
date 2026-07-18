@@ -1,0 +1,1647 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Weather</class>
+ <widget class="QWidget" name="Weather">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1024</width>
+    <height>470</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QWidget" name="backgroundWidget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1024</width>
+     <height>470</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>1024</width>
+     <height>470</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>1024</width>
+     <height>470</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget#backgroundWidget {
+	border-image: url(:/Pics/weatherPics/Pics/overcast.png);
+}</string>
+   </property>
+   <widget class="QWidget" name="futureWeatherBackgroundWidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>80</y>
+      <width>491</width>
+      <height>191</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QWidget#futureWeatherBackgroundWidget {
+	background-color: rgba(0, 0, 0, 40);
+	border-radius: 25px;
+	border: none;
+}
+
+</string>
+    </property>
+    <widget class="QLabel" name="futureWeatherTitleLabel">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>10</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MiSans Demibold</family>
+       <pointsize>12</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel#futureWeatherTitleLabel {
+	color: white;
+}</string>
+     </property>
+     <property name="text">
+      <string>近5日预报</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="todayTitleLabel">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>50</y>
+       <width>31</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MiSans Demibold</family>
+       <pointsize>12</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel#todayTitleLabel {
+	color: white;
+}</string>
+     </property>
+     <property name="text">
+      <string>今天</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="day2TitleLabel">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>77</y>
+       <width>51</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MiSans Demibold</family>
+       <pointsize>12</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel#day2TitleLabel {
+	color: white;
+}</string>
+     </property>
+     <property name="text">
+      <string>周二</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="day3TitleLabel">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>105</y>
+       <width>51</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MiSans Demibold</family>
+       <pointsize>12</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel#day3TitleLabel {
+	color: white;
+}</string>
+     </property>
+     <property name="text">
+      <string>周三</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="day4TitleLabel">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>133</y>
+       <width>51</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MiSans Demibold</family>
+       <pointsize>12</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel#day4TitleLabel {
+	color: white;
+}</string>
+     </property>
+     <property name="text">
+      <string>周四</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="horizontalLineLabel1">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>70</y>
+       <width>451</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel#horizontalLineLabel1 {
+    border-top: 1px solid white; /* 关键：left→top，实现水平线 */
+    background-color: transparent; /* 保持背景透明，和你原有逻辑一致 */
+    /* 可选：设置高度，避免label默认高度过大导致线位置偏移 */
+    height: 1px; 
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="horizontalLineLabel2">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>99</y>
+       <width>451</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel#horizontalLineLabel2 {
+    border-top: 1px solid white; /* 关键：left→top，实现水平线 */
+    background-color: transparent; /* 保持背景透明，和你原有逻辑一致 */
+    /* 可选：设置高度，避免label默认高度过大导致线位置偏移 */
+    height: 1px; 
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="horizontalLineLabel3">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>127</y>
+       <width>451</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel#horizontalLineLabel3 {
+    border-top: 1px solid white; /* 关键：left→top，实现水平线 */
+    background-color: transparent; /* 保持背景透明，和你原有逻辑一致 */
+    /* 可选：设置高度，避免label默认高度过大导致线位置偏移 */
+    height: 1px; 
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="horizontalLineLabel4">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>155</y>
+       <width>451</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel#horizontalLineLabel4 {
+    border-top: 1px solid white; /* 关键：left→top，实现水平线 */
+    background-color: transparent; /* 保持背景透明，和你原有逻辑一致 */
+    /* 可选：设置高度，避免label默认高度过大导致线位置偏移 */
+    height: 1px; 
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="todayWeatherStateLabel">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>42</y>
+       <width>51</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MiSans Demibold</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel#todayWeatherStateLabel {
+	color: white;
+}</string>
+     </property>
+     <property name="text">
+      <string>阴天</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="day2WeatherStateLabel">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>69</y>
+       <width>51</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MiSans Demibold</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel#day2WeatherStateLabel {
+	color: white;
+}</string>
+     </property>
+     <property name="text">
+      <string>小雨</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="day3WeatherStateLabel">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>97</y>
+       <width>51</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MiSans Demibold</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel#day3WeatherStateLabel {
+	color: white;
+}</string>
+     </property>
+     <property name="text">
+      <string>雷阵雨</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="day4WeatherStateLabel">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>125</y>
+       <width>51</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MiSans Demibold</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel#day4WeatherStateLabel {
+	color: white;
+}</string>
+     </property>
+     <property name="text">
+      <string>雾</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="todayWindyStateLabel">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>42</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MiSans Demibold</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel#todayWindyStateLabel {
+	color: white;
+}</string>
+     </property>
+     <property name="text">
+      <string>无风向 微风</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="day2WindyStateLabel">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>69</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MiSans Demibold</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel#day2WindyStateLabel {
+	color: white;
+}</string>
+     </property>
+     <property name="text">
+      <string>无风向 微风</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="day3WindyStateLabel">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>97</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MiSans Demibold</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel#day3WindyStateLabel {
+	color: white;
+}</string>
+     </property>
+     <property name="text">
+      <string>无风向 微风</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="day4WindyStateLabel">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>125</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MiSans Demibold</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel#day4WindyStateLabel {
+	color: white;
+}</string>
+     </property>
+     <property name="text">
+      <string>无风向 微风</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="todayWeatherIconLabel">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>45</y>
+       <width>21</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="../icons.qrc">:/Icons/weatherIcons/Icons/cloudy.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="day2WeatherIconLabel">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>75</y>
+       <width>21</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="../icons.qrc">:/Icons/weatherIcons/Icons/rain.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="day4WeatherIconLabel">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>131</y>
+       <width>21</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="../icons.qrc">:/Icons/weatherIcons/Icons/snow.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="todayLowestTemperatureLabel">
+     <property name="geometry">
+      <rect>
+       <x>310</x>
+       <y>50</y>
+       <width>41</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MiSans Demibold</family>
+       <pointsize>12</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel#todayLowestTemperatureLabel {
+	color: white;
+}</string>
+     </property>
+     <property name="text">
+      <string>-99°</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="day2LowestTemperatureLabel">
+     <property name="geometry">
+      <rect>
+       <x>310</x>
+       <y>78</y>
+       <width>41</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MiSans Demibold</family>
+       <pointsize>12</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel#day2LowestTemperatureLabel {
+	color: white;
+}</string>
+     </property>
+     <property name="text">
+      <string>-99°</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="day3LowestTemperatureLabel">
+     <property name="geometry">
+      <rect>
+       <x>310</x>
+       <y>106</y>
+       <width>41</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MiSans Demibold</family>
+       <pointsize>12</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel#day3LowestTemperatureLabel {
+	color: white;
+}</string>
+     </property>
+     <property name="text">
+      <string>-99°</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="day4LowestTemperatureLabel">
+     <property name="geometry">
+      <rect>
+       <x>310</x>
+       <y>134</y>
+       <width>41</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MiSans Demibold</family>
+       <pointsize>12</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel#day4LowestTemperatureLabel {
+	color: white;
+}</string>
+     </property>
+     <property name="text">
+      <string>-99°</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QProgressBar" name="todayTemperatureProgressBar">
+     <property name="geometry">
+      <rect>
+       <x>357</x>
+       <y>53</y>
+       <width>71</width>
+       <height>10</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QProgressBar#todayTemperatureProgressBar {
+    border-radius: 5px;
+    border: 1px solid #ffffff;
+    background-color: transparent;
+    qproperty-textVisible: false; /* 隐藏进度文字，取消注释即可 */
+}
+
+/* 进度填充部分*/
+QProgressBar#todayTemperatureProgressBar::chunk {
+    border-radius: 3px; /* 比整体圆角小2px，避免填充部分超出边框圆角 */
+    background-color: #2a9919;
+    /* 渐变背景 */
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #2a9919, stop:1 #4cff38);
+}</string>
+     </property>
+     <property name="minimum">
+      <number>-55</number>
+     </property>
+     <property name="maximum">
+      <number>75</number>
+     </property>
+     <property name="value">
+      <number>35</number>
+     </property>
+     <property name="textVisible">
+      <bool>false</bool>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="textDirection">
+      <enum>QProgressBar::TopToBottom</enum>
+     </property>
+    </widget>
+    <widget class="QProgressBar" name="day2TemperatureProgressBar">
+     <property name="geometry">
+      <rect>
+       <x>357</x>
+       <y>80</y>
+       <width>71</width>
+       <height>10</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QProgressBar#day2TemperatureProgressBar {
+    border-radius: 5px;
+    border: 1px solid #ffffff;
+    background-color: transparent;
+    qproperty-textVisible: false; /* 隐藏进度文字，取消注释即可 */
+}
+
+/* 进度填充部分（关键：单独设置圆角，否则填充部分是直角） */
+QProgressBar#day2TemperatureProgressBar::chunk {
+    border-radius: 3px; /* 比整体圆角小2px，避免填充部分超出边框圆角 */
+    background-color: #2a9919;
+    /* 可选：渐变背景 */
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #2a9919, stop:1 #4cff38);
+}</string>
+     </property>
+     <property name="minimum">
+      <number>-55</number>
+     </property>
+     <property name="maximum">
+      <number>75</number>
+     </property>
+     <property name="value">
+      <number>35</number>
+     </property>
+     <property name="textVisible">
+      <bool>false</bool>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="textDirection">
+      <enum>QProgressBar::TopToBottom</enum>
+     </property>
+    </widget>
+    <widget class="QProgressBar" name="day3TemperatureProgressBar">
+     <property name="geometry">
+      <rect>
+       <x>357</x>
+       <y>110</y>
+       <width>71</width>
+       <height>10</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QProgressBar#day3TemperatureProgressBar {
+    /* 1. 进度条整体圆角（核心） */
+    border-radius: 5px; /* 整体圆角半径，推荐6-10px */
+    
+    /* 2. 边框设置（可选，带颜色边框） */
+    border: 1px solid #ffffff; /* 1px浅灰色边框 */
+    
+    /* 3. 背景透明（延续你的需求） */
+    background-color: transparent;
+    
+    /* 5. 文本样式（可选，隐藏/显示进度文字） */
+    color: #666666; /* 进度文字颜色 */
+    text-align: center; /* 文字居中 */
+    qproperty-textVisible: false; /* 隐藏进度文字，取消注释即可 */
+}
+
+/* 进度填充部分（关键：单独设置圆角，否则填充部分是直角） */
+QProgressBar#day3TemperatureProgressBar::chunk {
+    border-radius: 3px; /* 比整体圆角小2px，避免填充部分超出边框圆角 */
+    background-color: #2a9919; /* 进度条填充颜色（蓝色，可自定义） */
+    /* 可选：渐变背景 */
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #2a9919, stop:1 #4cff38);
+}</string>
+     </property>
+     <property name="minimum">
+      <number>-55</number>
+     </property>
+     <property name="maximum">
+      <number>75</number>
+     </property>
+     <property name="value">
+      <number>35</number>
+     </property>
+     <property name="textVisible">
+      <bool>false</bool>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="textDirection">
+      <enum>QProgressBar::TopToBottom</enum>
+     </property>
+    </widget>
+    <widget class="QProgressBar" name="day4TemperatureProgressBar">
+     <property name="geometry">
+      <rect>
+       <x>357</x>
+       <y>137</y>
+       <width>71</width>
+       <height>10</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QProgressBar#day4TemperatureProgressBar {
+    /* 1. 进度条整体圆角（核心） */
+    border-radius: 5px; /* 整体圆角半径，推荐6-10px */
+    
+    /* 2. 边框设置（可选，带颜色边框） */
+    border: 1px solid #ffffff; /* 1px浅灰色边框 */
+    
+    /* 3. 背景透明（延续你的需求） */
+    background-color: transparent;
+    
+    /* 5. 文本样式（可选，隐藏/显示进度文字） */
+    color: #666666; /* 进度文字颜色 */
+    text-align: center; /* 文字居中 */
+    qproperty-textVisible: false; /* 隐藏进度文字，取消注释即可 */
+}
+
+/* 进度填充部分（关键：单独设置圆角，否则填充部分是直角） */
+QProgressBar#day4TemperatureProgressBar::chunk {
+    border-radius: 3px; /* 比整体圆角小2px，避免填充部分超出边框圆角 */
+    background-color: #2a9919; /* 进度条填充颜色（蓝色，可自定义） */
+    /* 可选：渐变背景 */
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #2a9919, stop:1 #4cff38);
+}</string>
+     </property>
+     <property name="minimum">
+      <number>-55</number>
+     </property>
+     <property name="maximum">
+      <number>75</number>
+     </property>
+     <property name="value">
+      <number>35</number>
+     </property>
+     <property name="textVisible">
+      <bool>false</bool>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="textDirection">
+      <enum>QProgressBar::TopToBottom</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="todayHighestTemperatureLabel">
+     <property name="geometry">
+      <rect>
+       <x>435</x>
+       <y>50</y>
+       <width>41</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MiSans Demibold</family>
+       <pointsize>12</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel#todayHighestTemperatureLabel {
+	color: white;
+}</string>
+     </property>
+     <property name="text">
+      <string>-99°</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="day2HighestTemperatureLabel">
+     <property name="geometry">
+      <rect>
+       <x>436</x>
+       <y>78</y>
+       <width>41</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MiSans Demibold</family>
+       <pointsize>12</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel#day2HighestTemperatureLabel {
+	color: white;
+}</string>
+     </property>
+     <property name="text">
+      <string>-99°</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="day3HighestTemperatureLabel">
+     <property name="geometry">
+      <rect>
+       <x>435</x>
+       <y>107</y>
+       <width>41</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MiSans Demibold</family>
+       <pointsize>12</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel#day3HighestTemperatureLabel {
+	color: white;
+}</string>
+     </property>
+     <property name="text">
+      <string>-99°</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="day4HighestTemperatureLabel">
+     <property name="geometry">
+      <rect>
+       <x>435</x>
+       <y>134</y>
+       <width>41</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MiSans Demibold</family>
+       <pointsize>12</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel#day4HighestTemperatureLabel {
+	color: white;
+}</string>
+     </property>
+     <property name="text">
+      <string>-99°</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="day3WeatherIconLabel">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>103</y>
+       <width>21</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="../icons.qrc">:/Icons/weatherIcons/Icons/sandDust.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="refreshPushButton">
+     <property name="geometry">
+      <rect>
+       <x>440</x>
+       <y>5</y>
+       <width>30</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="focusPolicy">
+      <enum>Qt::NoFocus</enum>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton#refreshPushButton {
+	background-color: rgba(0, 0, 0, 40);
+	border-radius: 15px;
+	border: none;
+}
+
+QPushButton#refreshPushButton:pressed {
+	background-color: rgba(0, 0, 0, 100);
+	border-radius: 15px;
+	border: none;
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="icon">
+      <iconset resource="../icons.qrc">
+       <normaloff>:/Icons/weatherIcons/Icons/refresh.png</normaloff>:/Icons/weatherIcons/Icons/refresh.png</iconset>
+     </property>
+     <property name="iconSize">
+      <size>
+       <width>15</width>
+       <height>15</height>
+      </size>
+     </property>
+    </widget>
+    <widget class="QLabel" name="day5TitleLabel">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>161</y>
+       <width>51</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MiSans Demibold</family>
+       <pointsize>12</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel#day5TitleLabel {
+	color: white;
+}</string>
+     </property>
+     <property name="text">
+      <string>周五</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="day5WeatherStateLabel">
+     <property name="geometry">
+      <rect>
+       <x>90</x>
+       <y>153</y>
+       <width>51</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MiSans Demibold</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel#day5WeatherStateLabel {
+	color: white;
+}</string>
+     </property>
+     <property name="text">
+      <string>晴</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="day5WindyStateLabel">
+     <property name="geometry">
+      <rect>
+       <x>160</x>
+       <y>153</y>
+       <width>121</width>
+       <height>31</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MiSans Demibold</family>
+       <pointsize>12</pointsize>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel#day5WindyStateLabel {
+	color: white;
+}</string>
+     </property>
+     <property name="text">
+      <string>无风向 微风</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+     </property>
+    </widget>
+    <widget class="QLabel" name="day5WeatherIconLabel">
+     <property name="geometry">
+      <rect>
+       <x>270</x>
+       <y>160</y>
+       <width>21</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true"/>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+     <property name="pixmap">
+      <pixmap resource="../icons.qrc">:/Icons/weatherIcons/Icons/sunny.png</pixmap>
+     </property>
+     <property name="scaledContents">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QLabel" name="day5LowestTemperatureLabel">
+     <property name="geometry">
+      <rect>
+       <x>310</x>
+       <y>161</y>
+       <width>41</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MiSans Demibold</family>
+       <pointsize>12</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel#day5LowestTemperatureLabel {
+	color: white;
+}</string>
+     </property>
+     <property name="text">
+      <string>-99°</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+    <widget class="QProgressBar" name="day5TemperatureProgressBar">
+     <property name="geometry">
+      <rect>
+       <x>357</x>
+       <y>164</y>
+       <width>71</width>
+       <height>10</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QProgressBar#day5TemperatureProgressBar {
+    /* 1. 进度条整体圆角（核心） */
+    border-radius: 5px; /* 整体圆角半径，推荐6-10px */
+    
+    /* 2. 边框设置（可选，带颜色边框） */
+    border: 1px solid #ffffff; /* 1px浅灰色边框 */
+    
+    /* 3. 背景透明（延续你的需求） */
+    background-color: transparent;
+    
+    /* 5. 文本样式（可选，隐藏/显示进度文字） */
+    color: #666666; /* 进度文字颜色 */
+    text-align: center; /* 文字居中 */
+    qproperty-textVisible: false; /* 隐藏进度文字，取消注释即可 */
+}
+
+/* 进度填充部分（关键：单独设置圆角，否则填充部分是直角） */
+QProgressBar#day5TemperatureProgressBar::chunk {
+    border-radius: 3px; /* 比整体圆角小2px，避免填充部分超出边框圆角 */
+    background-color: #2a9919; /* 进度条填充颜色（蓝色，可自定义） */
+    /* 可选：渐变背景 */
+    background: qlineargradient(x1:0, y1:0, x2:1, y2:0, stop:0 #2a9919, stop:1 #4cff38);
+}</string>
+     </property>
+     <property name="minimum">
+      <number>-55</number>
+     </property>
+     <property name="maximum">
+      <number>75</number>
+     </property>
+     <property name="value">
+      <number>35</number>
+     </property>
+     <property name="textVisible">
+      <bool>false</bool>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="textDirection">
+      <enum>QProgressBar::TopToBottom</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="day5HighestTemperatureLabel">
+     <property name="geometry">
+      <rect>
+       <x>435</x>
+       <y>161</y>
+       <width>41</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MiSans Demibold</family>
+       <pointsize>12</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel#day5HighestTemperatureLabel {
+	color: white;
+}</string>
+     </property>
+     <property name="text">
+      <string>-99°</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="cityLabel">
+    <property name="geometry">
+     <rect>
+      <x>85</x>
+      <y>70</y>
+      <width>221</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>MiSans Demibold</family>
+      <pointsize>20</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel#cityLabel {
+	color: white;
+	background-color: transparent;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>顺德区</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="currentTemperatureLabel">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>110</y>
+      <width>351</width>
+      <height>151</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>MiSans Demibold</family>
+      <pointsize>120</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel#currentTemperatureLabel {
+	color:white;
+	background-color: transparent;
+}</string>
+    </property>
+    <property name="text">
+     <string>21°</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="currentWeatherLabel">
+    <property name="geometry">
+     <rect>
+      <x>85</x>
+      <y>270</y>
+      <width>211</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>MiSans Demibold</family>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel#currentWeatherLabel {
+	color:white;
+	background-color: transparent;
+}</string>
+    </property>
+    <property name="text">
+     <string>阴天 最高25° 最低16°</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="currentHumidityPushButton">
+    <property name="geometry">
+     <rect>
+      <x>75</x>
+      <y>310</y>
+      <width>81</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>MiSans Demibold</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#currentHumidityPushButton {
+	color:white;
+	text-align: left;
+	padding-left: 5px;
+	background-color: rgba(0, 0, 0, 40);
+	border-radius: 15px;
+	border: none;
+}</string>
+    </property>
+    <property name="text">
+     <string>100%</string>
+    </property>
+    <property name="icon">
+     <iconset resource="../icons.qrc">
+      <normaloff>:/Icons/weatherIcons/Icons/humidity.png</normaloff>:/Icons/weatherIcons/Icons/humidity.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>20</width>
+      <height>20</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="airQualityPushButton">
+    <property name="geometry">
+     <rect>
+      <x>160</x>
+      <y>310</y>
+      <width>141</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>MiSans Demibold</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#airQualityPushButton {
+	color:white;
+	padding-left: 8px;
+	text-align: left;
+	background-color: rgba(0, 0, 0, 40);
+	border-radius: 15px;
+	border: none;
+}</string>
+    </property>
+    <property name="text">
+     <string>空气良好 999</string>
+    </property>
+    <property name="icon">
+     <iconset resource="../icons.qrc">
+      <normaloff>:/Icons/weatherIcons/Icons/airQuality.png</normaloff>:/Icons/weatherIcons/Icons/airQuality.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>20</width>
+      <height>20</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="searchCityPushButton">
+    <property name="geometry">
+     <rect>
+      <x>650</x>
+      <y>30</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#searchCityPushButton {
+	background-color: rgba(0, 0, 0, 40);
+	border-radius: 20px;
+	border: none;
+}
+
+QPushButton#searchCityPushButton:pressed {
+	background-color: rgba(0, 0, 0, 100);
+	border-radius: 20px;
+	border: none;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset resource="../icons.qrc">
+      <normaloff>:/Icons/weatherIcons/Icons/search.png</normaloff>:/Icons/weatherIcons/Icons/search.png</iconset>
+    </property>
+   </widget>
+   <widget class="QLineEdit" name="searchCityLineEdit">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>30</y>
+      <width>151</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>MiSans</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::ClickFocus</enum>
+    </property>
+    <property name="toolTip">
+     <string/>
+    </property>
+    <property name="whatsThis">
+     <string/>
+    </property>
+    <property name="accessibleName">
+     <string/>
+    </property>
+    <property name="accessibleDescription">
+     <string/>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLineEdit#searchCityLineEdit {
+	color:white;
+	background-color: rgba(0, 0, 0, 40);
+	border-radius: 20px;
+	border: none;
+}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="readOnly">
+     <bool>false</bool>
+    </property>
+    <property name="placeholderText">
+     <string>请输入查询的城市...</string>
+    </property>
+    <property name="clearButtonEnabled">
+     <bool>false</bool>
+    </property>
+   </widget>
+   <widget class="QWidget" name="temperatureCurveBackgroundWidget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>280</y>
+      <width>491</width>
+      <height>161</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QWidget#temperatureCurveBackgroundWidget {
+	background-color: rgba(0, 0, 0, 40);
+	border-radius: 25px;
+	border: none;
+}
+
+</string>
+    </property>
+    <widget class="QLabel" name="lowestTemperatureCurveLabel">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>80</y>
+       <width>451</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="highestTemperatureCurveLabel">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>0</y>
+       <width>451</width>
+       <height>81</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="curveTitleLabel">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>10</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="font">
+      <font>
+       <family>MiSans Demibold</family>
+       <pointsize>12</pointsize>
+       <weight>50</weight>
+       <bold>false</bold>
+      </font>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QLabel#curveTitleLabel {
+	color: white;
+}</string>
+     </property>
+     <property name="text">
+      <string>高低温曲线</string>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="latestdataSourceLabel">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>445</y>
+      <width>261</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>MiSans Demibold</family>
+      <pointsize>10</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel#latestdataSourceLabel {
+	color:white;
+	background-color: rgba(0, 0, 0, 40);
+	border-radius: 10px;
+	border: none;
+}</string>
+    </property>
+    <property name="text">
+     <string>数据最后更新时间  2026-03-12 17:40:02</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+    <property name="textInteractionFlags">
+     <set>Qt::NoTextInteraction</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="messageBoxPushButton">
+    <property name="geometry">
+     <rect>
+      <x>420</x>
+      <y>60</y>
+      <width>181</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>MiSans</family>
+      <pointsize>12</pointsize>
+     </font>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#messageBoxPushButton {
+	background-color: rgb(31, 34, 43);
+	color: white;
+	border: none;
+	border-radius: 15px;
+	text-align: center;
+}</string>
+    </property>
+    <property name="text">
+     <string>正在更新天气数据</string>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>:/icons/resources/icons/refresh.png</normaloff>:/icons/resources/icons/refresh.png</iconset>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../icons.qrc"/>
+ </resources>
+ <connections/>
+</ui>

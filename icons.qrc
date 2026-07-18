@@ -1,0 +1,173 @@
+<RCC>
+    <qresource prefix="/Icons/statusBar">
+        <file>Icons/account.jpg</file>
+        <file>Icons/data.png</file>
+        <file>Icons/wifi.png</file>
+        <file>Icons/Bluetooth.png</file>
+    </qresource>
+    <qresource prefix="/Icons/navigationBar">
+        <file>Icons/menuButton.png</file>
+        <file>Icons/leftButton.png</file>
+        <file>Icons/rightButton.png</file>
+        <file>Icons/camera.png</file>
+        <file>Icons/calendar.png</file>
+        <file>Icons/messaging.png</file>
+        <file>Icons/weather.png</file>
+        <file>Icons/settings.png</file>
+        <file>Icons/homeButton.png</file>
+        <file>Icons/voiceAssistant.png</file>
+        <file>Icons/Exit.png</file>
+        <file>Icons/homeButtonHover.png</file>
+        <file>Icons/ExitHover.png</file>
+        <file>Icons/leftButtonHover.png</file>
+        <file>Icons/menuButtonHover.png</file>
+        <file>Icons/rightButtonHover.png</file>
+        <file>Icons/voiceAssistantHover.png</file>
+        <file>Icons/volMuted.png</file>
+        <file>Icons/volUp.png</file>
+    </qresource>
+    <qresource prefix="/Pics/Desktop">
+        <file>Icons/desktopPageIndicator0.png</file>
+        <file>Icons/desktopPageIndicator1.png</file>
+        <file>Pics/desktopBackground.png</file>
+    </qresource>
+    <qresource prefix="/Icons/Application">
+        <file>Icons/barcodescanner.png</file>
+        <file>Icons/browser.png</file>
+        <file>Icons/calculator.png</file>
+        <file>Icons/calendar.png</file>
+        <file>Icons/camera.png</file>
+        <file>Icons/contacts.png</file>
+        <file>Icons/filemanager.png</file>
+        <file>Icons/FindDevice.png</file>
+        <file>Icons/messaging.png</file>
+        <file>Icons/music.png</file>
+        <file>Icons/notepad.png</file>
+        <file>Icons/photoeditor.png</file>
+        <file>Icons/recorder.png</file>
+        <file>Icons/screenshot.png</file>
+        <file>Icons/settings.png</file>
+        <file>Icons/update.png</file>
+        <file>Icons/weather.png</file>
+        <file>Icons/video.png</file>
+        <file>Icons/map.png</file>
+        <file>Icons/clock.png</file>
+        <file>Icons/monitor.png</file>
+        <file>Icons/performanceTool.png</file>
+    </qresource>
+    <qresource prefix="/Icons/systemSetting">
+        <file>Icons/account_2.png</file>
+        <file>Icons/voice.png</file>
+        <file>Icons/brightness.png</file>
+        <file>Icons/aboutCar.png</file>
+        <file>Icons/backButton.png</file>
+        <file>Icons/closeButton.png</file>
+        <file>Icons/openButton.png</file>
+        <file>Icons/sys_moreInfo.png</file>
+    </qresource>
+    <qresource prefix="/Icons/musicPlayer">
+        <file>Icons/nextButton.png</file>
+        <file>Icons/playList.png</file>
+        <file>Icons/previousButton.png</file>
+        <file>Icons/stopButton.png</file>
+        <file>Icons/currentPlay.png</file>
+        <file>Icons/cyclicSort.png</file>
+        <file>Icons/startButton.png</file>
+        <file>Icons/randomSort.png</file>
+        <file>Icons/playListClicked.png</file>
+        <file>Icons/voiceControl.png</file>
+        <file>Icons/singleCyclicSort.png</file>
+        <file>Icons/cyclicSortHover.png</file>
+        <file>Icons/nextButtonHover.png</file>
+        <file>Icons/playListHover.png</file>
+        <file>Icons/previousButtonHover.png</file>
+        <file>Icons/randomSortHover.png</file>
+        <file>Icons/singleCyclicSortHover.png</file>
+        <file>Icons/startButtonHover.png</file>
+        <file>Icons/stopButtonHover.png</file>
+        <file>Icons/openFile.png</file>
+    </qresource>
+    <qresource prefix="/Pics/musicPlayer">
+        <file>Pics/musicPlayerBackground.png</file>
+        <file>Pics/musicPlayerWelcome.png</file>
+        <file>Pics/albumCover.png</file>
+    </qresource>
+    <qresource prefix="/Icons/weatherIcons">
+        <file>Icons/airQuality.png</file>
+        <file>Icons/cloudy.png</file>
+        <file>Icons/foggy.png</file>
+        <file>Icons/humidity.png</file>
+        <file>Icons/overcast.png</file>
+        <file>Icons/rain.png</file>
+        <file>Icons/refresh.png</file>
+        <file>Icons/sandDust.png</file>
+        <file>Icons/search.png</file>
+        <file>Icons/snow.png</file>
+        <file>Icons/sunny.png</file>
+        <file>Icons/thunderRain.png</file>
+    </qresource>
+    <qresource prefix="/Pics/weatherPics">
+        <file>Pics/cloudy.png</file>
+        <file>Pics/foggy.png</file>
+        <file>Pics/overcast.png</file>
+        <file>Pics/rain.png</file>
+        <file>Pics/sandstorm.png</file>
+        <file>Pics/snow.png</file>
+        <file>Pics/sunny.png</file>
+        <file>Pics/thunderRain.png</file>
+    </qresource>
+    <qresource prefix="/Icons/clock">
+        <file>Icons/alarm.png</file>
+        <file>Icons/clock2.png</file>
+        <file>Icons/flags.png</file>
+        <file>Icons/pause.png</file>
+        <file>Icons/refreshTime.png</file>
+        <file>Icons/start.png</file>
+        <file>Icons/stop.png</file>
+        <file>Icons/stopWatch.png</file>
+        <file>Icons/sandClock.png</file>
+    </qresource>
+    <qresource prefix="/Icons/videoPlayer">
+        <file>Icons/fullscreen.png</file>
+        <file>Icons/fullscreenExit.png</file>
+        <file>Icons/nextVideo.png</file>
+        <file>Icons/openVideoFile.png</file>
+        <file>Icons/pauseVideo.png</file>
+        <file>Icons/playVideo.png</file>
+        <file>Icons/previousVideo.png</file>
+    </qresource>
+    <qresource prefix="/Pics/videoPlayer">
+        <file>Pics/firstStart.png</file>
+    </qresource>
+    <qresource prefix="/Icons/camera">
+        <file>Icons/720P.png</file>
+        <file>Icons/backToCameraButton.png</file>
+        <file>Icons/flashOFF.png</file>
+        <file>Icons/flashON.png</file>
+        <file>Icons/magic.png</file>
+        <file>Icons/photoView.png</file>
+        <file>Icons/record.png</file>
+        <file>Icons/scan.png</file>
+        <file>Icons/takePhoto.png</file>
+        <file>Icons/waterMark.png</file>
+    </qresource>
+    <qresource prefix="/Icons/gallery">
+        <file>Icons/backToPicsAlbum.png</file>
+        <file>Icons/deletePics.png</file>
+        <file>Icons/image.png</file>
+        <file>Icons/like.png</file>
+        <file>Icons/picAlbum.png</file>
+        <file>Icons/picsPlay.png</file>
+        <file>Icons/refreshGallery.png</file>
+    </qresource>
+    <qresource prefix="/Icons/Recorder">
+        <file>Icons/deleteRecord.png</file>
+        <file>Icons/finishRecord.png</file>
+        <file>Icons/playRecord.png</file>
+        <file>Icons/startRecord.gif</file>
+        <file>Icons/startRecord.png</file>
+    </qresource>
+    <qresource prefix="/Pics/performanceTool">
+        <file>Pics/performanceToolBackground.png</file>
+    </qresource>
+</RCC>

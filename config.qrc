@@ -1,0 +1,9 @@
+<RCC>
+    <qresource prefix="/systemConfig">
+        <file>Config/systemConfig/volume.ini</file>
+        <file>Config/systemConfig/systemUpdateVersion.ini</file>
+        <file>Config/systemConfig/audioSelection.ini</file>
+        <file>Config/systemConfig/brightness.ini</file>
+        <file>Config/systemConfig/systemUpdateLog.txt</file>
+    </qresource>
+</RCC>

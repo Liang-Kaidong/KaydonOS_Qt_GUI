@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>DeleteConfirmDialog</class>
+ <widget class="QWidget" name="DeleteConfirmDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1024</width>
+    <height>470</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QWidget" name="DeleteConfirmDialogWidget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>322</x>
+     <y>120</y>
+     <width>380</width>
+     <height>211</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>380</width>
+     <height>211</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>380</width>
+     <height>211</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: white;
+border-radius: 30px;
+border: none;
+</string>
+   </property>
+   <widget class="QLabel" name="contentLabel">
+    <property name="geometry">
+     <rect>
+      <x>29</x>
+      <y>36</y>
+      <width>331</width>
+      <height>110</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>MiSans Demibold</family>
+      <pointsize>14</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">color: #333333;
+border: none;
+background-color: transparent;</string>
+    </property>
+    <property name="text">
+     <string>删除的照片将从所有设备删除，暂时没有恢复的操作，请谨慎操作</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QLabel" name="titleLabel">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>26</y>
+      <width>200</width>
+      <height>30</height>
+     </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>200</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>200</width>
+      <height>30</height>
+     </size>
+    </property>
+    <property name="font">
+     <font>
+      <family>MiSans Semibold</family>
+      <pointsize>16</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border: none;</string>
+    </property>
+    <property name="text">
+     <string>确定删除该照片？</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="cancelPushButton">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>140</y>
+      <width>161</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>MiSans Semibold</family>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#cancelPushButton {
+    background-color: #F0F1F1;
+    color: black;
+    border-radius: 15px;
+	border: none;
+}
+QPushButton#cancelPushButton:pressed {
+    background-color: #D4D4D4;
+	border: none;
+}
+</string>
+    </property>
+    <property name="text">
+     <string>取消</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="okPushButton">
+    <property name="geometry">
+     <rect>
+      <x>198</x>
+      <y>140</y>
+      <width>161</width>
+      <height>51</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>MiSans Semibold</family>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#okPushButton {
+    background-color: #F0F1F1;
+    color: red;
+    border-radius: 15px;
+	border: none;
+}
+QPushButton#okPushButton:pressed {
+    background-color: #D4D4D4;
+    color: red;
+    border-radius: 15px;
+	border: none;
+}</string>
+    </property>
+    <property name="text">
+     <string>删除</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QWidget" name="DeleteConfirmDialogBackgroundWidget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1024</width>
+     <height>470</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(0, 0, 0, 150);</string>
+   </property>
+  </widget>
+  <zorder>DeleteConfirmDialogBackgroundWidget</zorder>
+  <zorder>DeleteConfirmDialogWidget</zorder>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

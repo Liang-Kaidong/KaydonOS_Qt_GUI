@@ -1,0 +1,742 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MusicPlayer</class>
+ <widget class="QWidget" name="MusicPlayer">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1024</width>
+    <height>470</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true"/>
+  </property>
+  <widget class="QWidget" name="backgroundWidget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1024</width>
+     <height>470</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QWidget#backgroundWidget {
+	border-image: url(:/Pics/musicPlayer/Pics/musicPlayerBackground.png);
+}</string>
+   </property>
+   <widget class="QStackedWidget" name="musicPlayerStackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1024</width>
+      <height>470</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color:transparent;</string>
+    </property>
+    <widget class="QWidget" name="welcomePage">
+     <property name="styleSheet">
+      <string notr="true">border-image: url(:/Pics/musicPlayer/Pics/musicPlayerWelcome.png);</string>
+     </property>
+    </widget>
+    <widget class="QWidget" name="mainPage">
+     <widget class="QLabel" name="albumCoverLabel">
+      <property name="geometry">
+       <rect>
+        <x>75</x>
+        <y>40</y>
+        <width>341</width>
+        <height>341</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/Pics/musicPlayer/Pics/albumCover.png);
+border-radius: 40px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="textInteractionFlags">
+       <set>Qt::NoTextInteraction</set>
+      </property>
+     </widget>
+     <widget class="QSlider" name="processBarHorizontalSlider">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>400</y>
+        <width>410</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/* 槽 */
+QSlider::groove:horizontal {
+    border: none;
+    height: 12px;
+    background: #8c8c8c;   /* 未播放浅灰 */
+    border-radius: 4px;
+}
+
+/* 已播放 */
+QSlider::sub-page:horizontal {
+    background: white;
+    border-radius: 4px;
+}
+
+/* 未播放 */
+QSlider::add-page:horizontal {
+    background: #8c8c8c;
+    border-radius: 4px;
+}
+
+/* 滑块（默认状态-纯圆） */
+QSlider::handle:horizontal {
+    background: white;
+    width: 20px;
+    height: 20px;
+    margin: -4px 0;      
+    border-radius: 10px;
+}
+</string>
+      </property>
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+     </widget>
+     <widget class="QLabel" name="currentTimeLabel">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>426</y>
+        <width>61</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>MiSans</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:white;</string>
+      </property>
+      <property name="text">
+       <string>00:00</string>
+      </property>
+      <property name="textInteractionFlags">
+       <set>Qt::NoTextInteraction</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="endTimeLabel">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>426</y>
+        <width>61</width>
+        <height>21</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>MiSans</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="layoutDirection">
+       <enum>Qt::LeftToRight</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:white;</string>
+      </property>
+      <property name="text">
+       <string>00:00</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+      </property>
+      <property name="textInteractionFlags">
+       <set>Qt::NoTextInteraction</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="currentPlayIconLabel">
+      <property name="geometry">
+       <rect>
+        <x>485</x>
+        <y>30</y>
+        <width>60</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/Icons/musicPlayer/Icons/currentPlay.png);
+background-color:transparent;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="textInteractionFlags">
+       <set>Qt::NoTextInteraction</set>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="musicLyricTextBrowser">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>130</y>
+        <width>481</width>
+        <height>191</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>MiSans</family>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: transparent;
+color: rgb(255, 255, 255);
+border: none;</string>
+      </property>
+      <property name="inputMethodHints">
+       <set>Qt::ImhNone</set>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="html">
+       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MiSans'; font-size:20pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;暂无歌词&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="textInteractionFlags">
+       <set>Qt::NoTextInteraction</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="playSortPushButton">
+      <property name="geometry">
+       <rect>
+        <x>560</x>
+        <y>390</y>
+        <width>60</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/* ================= 默认状态 ================= */
+QPushButton#playSortPushButton {
+    border-image: url(:/Icons/musicPlayer/Icons/cyclicSort.png);
+}
+
+QPushButton#playSortPushButton:pressed {
+    border-image: url(:/Icons/musicPlayer/Icons/cyclicSortHover.png);
+}
+
+/* ================= 列表循环 ================= */
+QPushButton#playSortPushButton[playSort=&quot;1&quot;] {
+    border-image: url(:/Icons/musicPlayer/Icons/cyclicSort.png);
+}
+
+QPushButton#playSortPushButton[playSort=&quot;1&quot;]:pressed {
+    border-image: url(:/Icons/musicPlayer/Icons/cyclicSortHover.png);
+}
+
+/* ================= 单曲循环 ================= */
+QPushButton#playSortPushButton[playSort=&quot;2&quot;] {
+    border-image: url(:/Icons/musicPlayer/Icons/singleCyclicSort.png);
+}
+
+QPushButton#playSortPushButton[playSort=&quot;2&quot;]:pressed {
+    border-image: url(:/Icons/musicPlayer/Icons/singleCyclicSortHover.png);
+}
+
+/* ================= 随机播放 ================= */
+QPushButton#playSortPushButton[playSort=&quot;3&quot;] {
+    border-image: url(:/Icons/musicPlayer/Icons/randomSort.png);
+}
+
+QPushButton#playSortPushButton[playSort=&quot;3&quot;]:pressed {
+    border-image: url(:/Icons/musicPlayer/Icons/randomSortHover.png);
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="musicListPushButton">
+      <property name="geometry">
+       <rect>
+        <x>630</x>
+        <y>390</y>
+        <width>60</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#musicListPushButton {
+	border-image: url(:/Icons/musicPlayer/Icons/playList.png);
+}
+
+QPushButton#musicListPushButton:pressed {
+	border-image: url(:/Icons/musicPlayer/Icons/playListHover.png);
+}
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>710</x>
+        <y>370</y>
+        <width>291</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <layout class="QHBoxLayout" name="playControlHorizontalLayout">
+       <item>
+        <widget class="QPushButton" name="previousPushButton">
+         <property name="minimumSize">
+          <size>
+           <width>80</width>
+           <height>80</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>80</width>
+           <height>80</height>
+          </size>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton#previousPushButton {
+	border-image: url(:/Icons/musicPlayer/Icons/previousButton.png);
+}
+
+QPushButton#previousPushButton:pressed {
+	border-image: url(:/Icons/musicPlayer/Icons/previousButtonHover.png);
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="playControlPushButton">
+         <property name="minimumSize">
+          <size>
+           <width>80</width>
+           <height>80</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>80</width>
+           <height>80</height>
+          </size>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton#playControlPushButton {
+	border-image: url(:/Icons/musicPlayer/Icons/startButton.png);
+}
+
+QPushButton#playControlPushButton:pressed {
+	border-image: url(:/Icons/musicPlayer/Icons/startButtonHover.png);
+}
+
+QPushButton#playControlPushButton[playState=&quot;0&quot;] {
+    border-image: url(:/Icons/musicPlayer/Icons/startButton.png);
+}
+
+QPushButton#playControlPushButton[playState=&quot;0&quot;]:pressed {
+    border-image: url(:/Icons/musicPlayer/Icons/startButtonHover.png);
+}
+
+QPushButton#playControlPushButton[playState=&quot;1&quot;] {
+    border-image: url(:/Icons/musicPlayer/Icons/stopButton.png);
+}
+
+QPushButton#playControlPushButton[playState=&quot;1&quot;]:pressed {
+    border-image: url(:/Icons/musicPlayer/Icons/stopButtonHover.png);
+}
+
+QPushButton#playControlPushButton[playState=&quot;2&quot;] {
+    border-image: url(:/Icons/musicPlayer/Icons/startButton.png);
+}
+
+QPushButton#playControlPushButton[playState=&quot;2&quot;]:pressed {
+    border-image: url(:/Icons/musicPlayer/Icons/startButtonHover.png);
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="nextPushButton">
+         <property name="minimumSize">
+          <size>
+           <width>80</width>
+           <height>80</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>80</width>
+           <height>80</height>
+          </size>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::NoFocus</enum>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">QPushButton#nextPushButton {
+	border-image: url(:/Icons/musicPlayer/Icons/nextButton.png);
+}
+
+QPushButton#nextPushButton:pressed {
+	border-image: url(:/Icons/musicPlayer/Icons/nextButtonHover.png);
+}</string>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QPushButton" name="voiceControlPushButton">
+      <property name="geometry">
+       <rect>
+        <x>490</x>
+        <y>390</y>
+        <width>60</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/Icons/musicPlayer/Icons/voiceControl.png);</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="currentPlayLabel">
+      <property name="geometry">
+       <rect>
+        <x>550</x>
+        <y>39</y>
+        <width>461</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>MiSans</family>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color:transparent;
+border:none;
+color:white;</string>
+      </property>
+      <property name="text">
+       <string>音乐播放器</string>
+      </property>
+     </widget>
+     <widget class="QWidget" name="volumeWidget" native="true">
+      <property name="geometry">
+       <rect>
+        <x>440</x>
+        <y>329</y>
+        <width>261</width>
+        <height>51</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(0, 0, 0, 50);
+border-radius: 16px;</string>
+      </property>
+      <widget class="QSlider" name="voiceControlHorizontalSlider">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>10</y>
+         <width>241</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QSlider {
+    background: transparent;
+}
+
+/* 槽 */
+QSlider::groove:horizontal {
+    border: none;
+    height: 12px;
+    background: #8c8c8c;   /* 未播放浅灰 */
+    border-radius: 4px;
+}
+
+/* 已播放 */
+QSlider::sub-page:horizontal {
+    background: white;
+    border-radius: 4px;
+}
+
+/* 未播放 */
+QSlider::add-page:horizontal {
+    background: #8c8c8c;
+    border-radius: 4px;
+}
+
+/* 滑块（默认状态-纯圆） */
+QSlider::handle:horizontal {
+    background: white;
+    width: 20px;
+    height: 20px;
+    margin: -4px 0;      
+    border-radius: 10px;
+}
+</string>
+       </property>
+       <property name="maximum">
+        <number>100</number>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="selectMusicPage">
+     <widget class="QPushButton" name="musicListPushButton_2">
+      <property name="geometry">
+       <rect>
+        <x>630</x>
+        <y>390</y>
+        <width>60</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border-image: url(:/Icons/musicPlayer/Icons/playListClicked.png);
+border-radius: 18px;</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+     <widget class="QLabel" name="playListTitleLabel">
+      <property name="geometry">
+       <rect>
+        <x>33</x>
+        <y>20</y>
+        <width>151</width>
+        <height>60</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>MiSans</family>
+        <pointsize>24</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color:white;</string>
+      </property>
+      <property name="text">
+       <string>播放列表</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+      <property name="textInteractionFlags">
+       <set>Qt::NoTextInteraction</set>
+      </property>
+     </widget>
+     <widget class="QListWidget" name="musicListWidget">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>100</y>
+        <width>936</width>
+        <height>266</height>
+       </rect>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>971</width>
+        <height>301</height>
+       </size>
+      </property>
+      <property name="font">
+       <font>
+        <family>MiSans</family>
+        <pointsize>16</pointsize>
+       </font>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QListWidget {
+    color: white;
+    border: none;  /* 去除边框 */
+    border-radius: 10px;  /* 列表整体圆角效果 */
+}
+
+QListWidget::item {
+    background-color: transparent;  /* 列表项的背景色 */
+    margin: 4px;  /* 给项添加一点外边距 */
+    padding-left: 10px;  /* 列表项的左侧内边距 */
+    padding-right: 10px;  /* 右侧留出空间给勾选框 */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    height: 40px;  /* 设置列表项高度为40px */
+}
+
+QListWidget::item:selected {
+    background-color: #4980F7;  /* 选中项的背景色 */
+    color: white;
+    border: none;  /* 去除边框 */
+    border-radius: 10px;  /* 列表项选中时的圆角效果 */
+}</string>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="editTriggers">
+       <set>QAbstractItemView::NoEditTriggers</set>
+      </property>
+      <item>
+       <property name="text">
+        <string>测试歌曲1</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>测试歌曲2</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>测试歌曲3</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>测试歌曲4</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>测试歌曲5</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>测试歌曲6</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>测试歌曲7</string>
+       </property>
+      </item>
+     </widget>
+     <widget class="QPushButton" name="selectMusicPathPushButton">
+      <property name="geometry">
+       <rect>
+        <x>750</x>
+        <y>27</y>
+        <width>221</width>
+        <height>45</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>MiSans</family>
+        <pointsize>12</pointsize>
+       </font>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgba(0, 0, 0, 50);
+color: white;
+border-radius: 22px;
+border: none;</string>
+      </property>
+      <property name="text">
+       <string>选择音乐文件夹...</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../icons.qrc">
+        <normaloff>:/Icons/musicPlayer/Icons/openFile.png</normaloff>:/Icons/musicPlayer/Icons/openFile.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>20</width>
+        <height>20</height>
+       </size>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../icons.qrc"/>
+ </resources>
+ <connections/>
+</ui>

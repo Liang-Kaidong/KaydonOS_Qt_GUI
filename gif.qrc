@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/gif/systemSetting">
+        <file>GIF/Welcome.gif</file>
+    </qresource>
+</RCC>

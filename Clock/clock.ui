@@ -1,0 +1,1324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Clock</class>
+ <widget class="QWidget" name="Clock">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1024</width>
+    <height>470</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1024</width>
+    <height>470</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>1024</width>
+    <height>470</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(240, 240, 240);</string>
+  </property>
+  <widget class="QWidget" name="backgroundWidget" native="true">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1024</width>
+     <height>470</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>1024</width>
+     <height>470</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>1024</width>
+     <height>470</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(240, 240, 240);</string>
+   </property>
+   <widget class="QStackedWidget" name="clockStackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>1024</width>
+      <height>400</height>
+     </rect>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>1024</width>
+      <height>400</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>1024</width>
+      <height>400</height>
+     </size>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: transparent;
+
+</string>
+    </property>
+    <widget class="QWidget" name="alarmPage">
+     <widget class="QLabel" name="currentEnableAlarmLabel">
+      <property name="geometry">
+       <rect>
+        <x>380</x>
+        <y>40</y>
+        <width>261</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>MiSans</family>
+        <pointsize>24</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>所有闹钟已关闭</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QWidget" name="undefineWidget1" native="true">
+      <property name="geometry">
+       <rect>
+        <x>30</x>
+        <y>130</y>
+        <width>301</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);
+border: none;
+border-radius: 25px;</string>
+      </property>
+      <widget class="QLabel" name="alarmTimeLabel1">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>91</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>MiSans</family>
+         <pointsize>20</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>06:00</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="alarmDayLabel1">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>61</y>
+         <width>111</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>MiSans</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>每天</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="alarmPushButton1">
+       <property name="geometry">
+        <rect>
+         <x>194</x>
+         <y>30</y>
+         <width>81</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>MiSans</family>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(135, 135, 135);
+border: none;
+color: white;
+border-radius: 20px;</string>
+       </property>
+       <property name="text">
+        <string>控制按钮</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="undefineWidget2" native="true">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>130</y>
+        <width>301</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);
+border: none;
+border-radius: 25px;</string>
+      </property>
+      <widget class="QLabel" name="alarmTimeLabel2">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>91</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>MiSans</family>
+         <pointsize>20</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>07:00</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="alarmDayLabel2">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>61</y>
+         <width>111</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>MiSans</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>周一至周五</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="alarmPushButton2">
+       <property name="geometry">
+        <rect>
+         <x>194</x>
+         <y>30</y>
+         <width>81</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>MiSans</family>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(135, 135, 135);
+border: none;
+color: white;
+border-radius: 20px;</string>
+       </property>
+       <property name="text">
+        <string>控制按钮</string>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QWidget" name="undefineWidget3" native="true">
+      <property name="geometry">
+       <rect>
+        <x>690</x>
+        <y>130</y>
+        <width>301</width>
+        <height>101</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(255, 255, 255);
+border: none;
+border-radius: 25px;</string>
+      </property>
+      <widget class="QLabel" name="alarmTimeLabel3">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>20</y>
+         <width>91</width>
+         <height>31</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>MiSans</family>
+         <pointsize>20</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>08:00</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="alarmDayLabel3">
+       <property name="geometry">
+        <rect>
+         <x>20</x>
+         <y>61</y>
+         <width>121</width>
+         <height>21</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>MiSans</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>周六 周日</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="alarmPushButton3">
+       <property name="geometry">
+        <rect>
+         <x>194</x>
+         <y>30</y>
+         <width>81</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>MiSans</family>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(135, 135, 135);
+border: none;
+color: white;
+border-radius: 20px;</string>
+       </property>
+       <property name="text">
+        <string>控制按钮</string>
+       </property>
+      </widget>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="clockPage">
+     <widget class="QPushButton" name="updateTimePushButton">
+      <property name="geometry">
+       <rect>
+        <x>360</x>
+        <y>300</y>
+        <width>301</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>MiSans</family>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#updateTimePushButton {
+	border: none;
+	background-color: white;
+	border-radius: 20px;
+}
+
+QPushButton#updateTimePushButton:pressed {
+	border: none;
+	background-color: rgb(194, 194, 194);
+	border-radius: 20px;
+}</string>
+      </property>
+      <property name="text">
+       <string>立即更新当前时间</string>
+      </property>
+      <property name="icon">
+       <iconset resource="../icons.qrc">
+        <normaloff>:/Icons/clock/Icons/refreshTime.png</normaloff>:/Icons/clock/Icons/refreshTime.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>30</width>
+        <height>30</height>
+       </size>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="stopWatchPage">
+     <widget class="QLabel" name="timeLabel1">
+      <property name="geometry">
+       <rect>
+        <x>349</x>
+        <y>21</y>
+        <width>221</width>
+        <height>64</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>MiSans</family>
+        <pointsize>36</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel#timeLabel1{
+	background-color: transparent;
+}</string>
+      </property>
+      <property name="text">
+       <string>00:00:00</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="startPushButton">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>300</y>
+        <width>181</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>MiSans</family>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#startPushButton {
+	border: none;
+	background-color: white;
+	border-radius: 20px;
+}
+
+QPushButton#startPushButton:pressed {
+	border: none;
+	background-color: rgb(194, 194, 194);
+	border-radius: 20px;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="../icons.qrc">
+        <normaloff>:/Icons/clock/Icons/start.png</normaloff>:/Icons/clock/Icons/start.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="controlPushButton1">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>300</y>
+        <width>80</width>
+        <height>80</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>MiSans</family>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#controlPushButton1 {
+	border: none;
+	background-color: white;
+	border-radius: 40px;
+}
+
+QPushButton#controlPushButton1:pressed {
+	border: none;
+	background-color: rgb(194, 194, 194);
+	border-radius: 40px;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../Icons/flags.png</normaloff>../Icons/flags.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="controlPushButton2">
+      <property name="geometry">
+       <rect>
+        <x>540</x>
+        <y>300</y>
+        <width>80</width>
+        <height>80</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>MiSans</family>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#controlPushButton2 {
+	border: none;
+	background-color: white;
+	border-radius: 40px;
+}
+
+QPushButton#controlPushButton2:pressed {
+	border: none;
+	background-color: rgb(194, 194, 194);
+	border-radius: 40px;
+}
+
+</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../Icons/pause.png</normaloff>../Icons/pause.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QLabel" name="timeLabel3">
+      <property name="geometry">
+       <rect>
+        <x>570</x>
+        <y>21</y>
+        <width>101</width>
+        <height>64</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>MiSans</family>
+        <pointsize>36</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel#timeLabel3{
+	background-color: transparent;
+}</string>
+      </property>
+      <property name="text">
+       <string>00</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="timeLabel2">
+      <property name="geometry">
+       <rect>
+        <x>565</x>
+        <y>21</y>
+        <width>16</width>
+        <height>64</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>MiSans</family>
+        <pointsize>36</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLabel#timeLabel2{
+	background-color: transparent;
+}</string>
+      </property>
+      <property name="text">
+       <string>.</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QTextBrowser" name="timeKeeperTextBrowser">
+      <property name="geometry">
+       <rect>
+        <x>170</x>
+        <y>90</y>
+        <width>691</width>
+        <height>191</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>MiSans</family>
+        <pointsize>20</pointsize>
+       </font>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QTextBrowser#timeKeeperTextBrowser {
+	background-color: transparent;
+	border: none;
+}</string>
+      </property>
+      <property name="verticalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="horizontalScrollBarPolicy">
+       <enum>Qt::ScrollBarAlwaysOff</enum>
+      </property>
+      <property name="html">
+       <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
+&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
+p, li { white-space: pre-wrap; }
+&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'MiSans'; font-size:20pt; font-weight:400; font-style:normal;&quot;&gt;
+&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;01                                                              00:00:00.99&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+      </property>
+      <property name="textInteractionFlags">
+       <set>Qt::NoTextInteraction</set>
+      </property>
+     </widget>
+     <zorder>timeLabel1</zorder>
+     <zorder>timeLabel3</zorder>
+     <zorder>startPushButton</zorder>
+     <zorder>controlPushButton1</zorder>
+     <zorder>controlPushButton2</zorder>
+     <zorder>timeLabel2</zorder>
+     <zorder>timeKeeperTextBrowser</zorder>
+    </widget>
+    <widget class="QWidget" name="sandClockPage">
+     <widget class="QLabel" name="undefineLabel1">
+      <property name="geometry">
+       <rect>
+        <x>350</x>
+        <y>20</y>
+        <width>71</width>
+        <height>131</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>MiSans</family>
+        <pointsize>72</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>:</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="undefineLabel2">
+      <property name="geometry">
+       <rect>
+        <x>600</x>
+        <y>20</y>
+        <width>71</width>
+        <height>131</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>MiSans</family>
+        <pointsize>72</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>:</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="timeSetPushButton1">
+      <property name="geometry">
+       <rect>
+        <x>50</x>
+        <y>180</y>
+        <width>161</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>MiSans</family>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#timeSetPushButton1 {
+	border-radius: 20px;
+	border: none;
+	background-color: white;
+}
+
+QPushButton#timeSetPushButton1:pressed {
+	border-radius: 20px;
+	border: none;
+	background-color: rgb(194, 194, 194);
+}</string>
+      </property>
+      <property name="text">
+       <string>00:05:00</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="timeSetPushButton2">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>180</y>
+        <width>161</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>MiSans</family>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#timeSetPushButton2 {
+	border-radius: 20px;
+	border: none;
+	background-color: white;
+}
+
+QPushButton#timeSetPushButton2:pressed {
+	border-radius: 20px;
+	border: none;
+	background-color: rgb(194, 194, 194);
+}</string>
+      </property>
+      <property name="text">
+       <string>00:10:00</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="timeSetPushButton3">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>180</y>
+        <width>161</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>MiSans</family>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#timeSetPushButton3 {
+	border-radius: 20px;
+	border: none;
+	background-color: white;
+}
+
+QPushButton#timeSetPushButton3:pressed {
+	border-radius: 20px;
+	border: none;
+	background-color: rgb(194, 194, 194);
+}</string>
+      </property>
+      <property name="text">
+       <string>00:30:00</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="timeSetPushButton4">
+      <property name="geometry">
+       <rect>
+        <x>620</x>
+        <y>180</y>
+        <width>161</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>MiSans</family>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#timeSetPushButton4 {
+	border-radius: 20px;
+	border: none;
+	background-color: white;
+}
+
+QPushButton#timeSetPushButton4:pressed {
+	border-radius: 20px;
+	border: none;
+	background-color: rgb(194, 194, 194);
+}</string>
+      </property>
+      <property name="text">
+       <string>01:00:00</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="timeSetPushButton5">
+      <property name="geometry">
+       <rect>
+        <x>810</x>
+        <y>180</y>
+        <width>161</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>MiSans</family>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#timeSetPushButton5 {
+	border-radius: 20px;
+	border: none;
+	background-color: white;
+}
+
+QPushButton#timeSetPushButton5:pressed {
+	border-radius: 20px;
+	border: none;
+	background-color: rgb(194, 194, 194);
+}</string>
+      </property>
+      <property name="text">
+       <string>03:00:00</string>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="hoursSetLineEdit">
+      <property name="geometry">
+       <rect>
+        <x>180</x>
+        <y>30</y>
+        <width>161</width>
+        <height>131</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>MiSans</family>
+        <pointsize>72</pointsize>
+       </font>
+      </property>
+      <property name="mouseTracking">
+       <bool>false</bool>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::ClickFocus</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit#hoursSetLineEdit {
+	border: none;
+}</string>
+      </property>
+      <property name="text">
+       <string>00</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="minutesSetLineEdit">
+      <property name="geometry">
+       <rect>
+        <x>430</x>
+        <y>30</y>
+        <width>161</width>
+        <height>131</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>MiSans</family>
+        <pointsize>72</pointsize>
+       </font>
+      </property>
+      <property name="mouseTracking">
+       <bool>false</bool>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::ClickFocus</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit#minutesSetLineEdit {
+	border: none;
+}</string>
+      </property>
+      <property name="text">
+       <string>00</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLineEdit" name="secondsSetLineEdit">
+      <property name="geometry">
+       <rect>
+        <x>680</x>
+        <y>30</y>
+        <width>161</width>
+        <height>131</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>MiSans</family>
+        <pointsize>72</pointsize>
+       </font>
+      </property>
+      <property name="mouseTracking">
+       <bool>false</bool>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::ClickFocus</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QLineEdit#secondsSetLineEdit {
+	border: none;
+}</string>
+      </property>
+      <property name="text">
+       <string>00</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="startSetTimePushButton">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>300</y>
+        <width>181</width>
+        <height>81</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>MiSans</family>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#startSetTimePushButton {
+	border: none;
+	background-color: white;
+	border-radius: 20px;
+}
+
+QPushButton#startSetTimePushButton:pressed {
+	border: none;
+	background-color: rgb(194, 194, 194);
+	border-radius: 20px;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="../icons.qrc">
+        <normaloff>:/Icons/clock/Icons/start.png</normaloff>:/Icons/clock/Icons/start.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="countTimePage">
+     <widget class="QWidget" name="circleProgressWidget" native="true">
+      <property name="geometry">
+       <rect>
+        <x>370</x>
+        <y>30</y>
+        <width>261</width>
+        <height>261</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">border: none;
+background-color: transparent;</string>
+      </property>
+      <widget class="QLabel" name="countTimeLabel">
+       <property name="geometry">
+        <rect>
+         <x>50</x>
+         <y>110</y>
+         <width>161</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>MiSans</family>
+         <pointsize>24</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>01:00:00</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </widget>
+     <widget class="QPushButton" name="controlPushButton4">
+      <property name="geometry">
+       <rect>
+        <x>540</x>
+        <y>300</y>
+        <width>80</width>
+        <height>80</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>MiSans</family>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#controlPushButton4 {
+	border: none;
+	background-color: white;
+	border-radius: 40px;
+}
+
+QPushButton#controlPushButton4:pressed {
+	border: none;
+	background-color: rgb(194, 194, 194);
+	border-radius: 40px;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset>
+        <normaloff>../Icons/pause.png</normaloff>../Icons/pause.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="controlPushButton3">
+      <property name="geometry">
+       <rect>
+        <x>390</x>
+        <y>300</y>
+        <width>80</width>
+        <height>80</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>MiSans</family>
+        <pointsize>14</pointsize>
+       </font>
+      </property>
+      <property name="focusPolicy">
+       <enum>Qt::NoFocus</enum>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">QPushButton#controlPushButton3 {
+	border: none;
+	background-color: white;
+	border-radius: 40px;
+}
+
+QPushButton#controlPushButton3:pressed {
+	border: none;
+	background-color: rgb(194, 194, 194);
+	border-radius: 40px;
+}</string>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+      <property name="icon">
+       <iconset resource="../icons.qrc">
+        <normaloff>:/Icons/clock/Icons/stop.png</normaloff>:/Icons/clock/Icons/stop.png</iconset>
+      </property>
+      <property name="iconSize">
+       <size>
+        <width>60</width>
+        <height>60</height>
+       </size>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="Line" name="line">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>395</y>
+      <width>1024</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="sandClockPushButton">
+    <property name="geometry">
+     <rect>
+      <x>768</x>
+      <y>404</y>
+      <width>256</width>
+      <height>65</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>MiSans</family>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#sandClockPushButton {
+	border: none;
+	text-align: centre;
+	border-radius: 14px;
+}</string>
+    </property>
+    <property name="text">
+     <string>计时</string>
+    </property>
+    <property name="icon">
+     <iconset resource="../icons.qrc">
+      <normaloff>:/Icons/clock/Icons/sandClock.png</normaloff>:/Icons/clock/Icons/sandClock.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>25</width>
+      <height>25</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="stopWatchPushButton">
+    <property name="geometry">
+     <rect>
+      <x>512</x>
+      <y>404</y>
+      <width>256</width>
+      <height>65</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>MiSans</family>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#stopWatchPushButton {
+	border: none;
+	text-align: centre;
+	border-radius: 14px;
+}</string>
+    </property>
+    <property name="text">
+     <string>秒表</string>
+    </property>
+    <property name="icon">
+     <iconset resource="../icons.qrc">
+      <normaloff>:/Icons/clock/Icons/stopWatch.png</normaloff>:/Icons/clock/Icons/stopWatch.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>25</width>
+      <height>25</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="clockPushButton">
+    <property name="geometry">
+     <rect>
+      <x>256</x>
+      <y>404</y>
+      <width>256</width>
+      <height>65</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>MiSans</family>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#clockPushButton {
+	border: none;
+	text-align: centre;
+	border-radius: 14px;
+}</string>
+    </property>
+    <property name="text">
+     <string>世界时钟</string>
+    </property>
+    <property name="icon">
+     <iconset resource="../icons.qrc">
+      <normaloff>:/Icons/clock/Icons/clock2.png</normaloff>:/Icons/clock/Icons/clock2.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>28</width>
+      <height>28</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="alarmPushButton">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>404</y>
+      <width>256</width>
+      <height>65</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>MiSans</family>
+      <pointsize>14</pointsize>
+     </font>
+    </property>
+    <property name="focusPolicy">
+     <enum>Qt::NoFocus</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton#alarmPushButton {
+	border: none;
+	text-align: centre;
+	background-color: white;
+	border-radius: 14px;
+}</string>
+    </property>
+    <property name="text">
+     <string>闹钟</string>
+    </property>
+    <property name="icon">
+     <iconset resource="../icons.qrc">
+      <normaloff>:/Icons/clock/Icons/alarm.png</normaloff>:/Icons/clock/Icons/alarm.png</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>25</width>
+      <height>25</height>
+     </size>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources>
+  <include location="../icons.qrc"/>
+ </resources>
+ <connections/>
+</ui>

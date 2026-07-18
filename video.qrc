@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/video">
+        <file>Video/video1.avi</file>
+        <file>Video/video2.avi</file>
+    </qresource>
+</RCC>
