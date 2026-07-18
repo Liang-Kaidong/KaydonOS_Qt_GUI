@@ -1,7 +1,7 @@
 # KaydonOS
 基于Qt5.12.9开发的嵌入式车载HMI桌面系统，专属适配**正点原子IMX6ULL-ALPHA**开发板，复刻智能车载终端完整交互逻辑，集成多媒体播放器、硬件传感器、系统工具套件，面向嵌入式Linux学习、毕设实训场景开发。
 
-![KaydonOS Preview](Pics/desktopBackground.png)
+![KaydonOS Preview](Pics/mainWindow.png)
 
 ---
 
