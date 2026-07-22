@@ -270,9 +270,7 @@ KaydonOS_Qt_GUI/
 
 请联系：
 
-**Email：[your_email@example.com](mailto:your_email@example.com)**
-
-> 建议使用专门的开源项目邮箱，不要直接公开个人常用邮箱。
+**Email：226429965@qq.com**
 
 ---
 
